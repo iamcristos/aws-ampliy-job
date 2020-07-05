@@ -1,0 +1,7 @@
+{
+    "tableName": "city",
+    "partitionKeyName": "string",
+    "partitionKeyType": "S",
+    "sortKeyName": "category",
+    "sortKeyType": "S"
+}

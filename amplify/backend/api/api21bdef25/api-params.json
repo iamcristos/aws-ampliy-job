@@ -1,0 +1,37 @@
+{
+    "paths": [
+        {
+            "name": "/api",
+            "lambdaFunction": "apicode",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "api21bdef25",
+    "apiName": "api21bdef25",
+    "functionArns": [
+        {
+            "lambdaFunction": "apicode"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-project-dev-155429-authRole",
+        "unAuthRoleName": "amplify-project-dev-155429-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "apicode",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
