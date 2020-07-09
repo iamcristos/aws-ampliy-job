@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import './App.css';
 
+import Jobs from './components/Jobs';
+import Header from './components/Header';
+
+Amplify.configure(awsconfig);
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="App" >
+        <Jobs />
+      </div>
     </div>
   );
 }
 
-export default App;
+const authTheme = {navBar: {backgroundColor: '#556cd6', border:0, color: 'white'}}
+export default withAuthenticator(App,  {includeGreetings: true, theme: authTheme, signUpConfig:{
+  hiddenDefaults: ['phone_number']
+}},)
+// export default withAuthenticator(App, true);
